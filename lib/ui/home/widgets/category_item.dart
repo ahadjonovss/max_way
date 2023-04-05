@@ -6,10 +6,12 @@ class CategoryItem extends StatelessWidget {
   final String title;
   final String subtitle;
   final String image;
+  final Color textColor;
   const CategoryItem(
       {this.subtitle = "PIT\n - SA",
       this.title = "🔥 Yangi",
       this.image = AppImages.pizza,
+        this.textColor=AppColors.cE76A06,
       this.gradientColors = const [
         AppColors.cFFC85C,
         AppColors.cF1B301,
@@ -50,8 +52,8 @@ class CategoryItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(subtitle,
-                  style: const TextStyle(
-                      color: AppColors.cE76A06,
+                  style:  TextStyle(
+                      color: textColor,
                       fontSize: 26,
                       fontWeight: FontWeight.w700)),
               Image.asset(

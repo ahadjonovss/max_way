@@ -1,3 +1,4 @@
+import 'package:max_way/ui/home/widgets/category_item.dart';
 import 'package:max_way/utils/constants/color/color.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
@@ -40,12 +41,17 @@ class HomePage extends StatelessWidget {
             SizedBox(height: height(context) * 0.08),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-
-                Container(
-                  height: height(context)*0.15,
-                  width: height(context)*0.2,
-                  color: Colors.red,
+              children: const [
+                CategoryItem(),
+                CategoryItem(
+                  image: AppImages.combo,
+                  subtitle: "KOM\n  -BO",
+                  title: "🚀 Ko'p sotilgan",
+                  gradientColors: [
+                    AppColors.c800A7A,
+                    AppColors.c800A7A,
+                  ],
+                  textColor: AppColors.cFC96F7,
                 ),
               ],
             )
