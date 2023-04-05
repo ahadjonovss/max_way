@@ -1,3 +1,4 @@
+import 'package:max_way/utils/constants/color/color.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
 class HomePage extends StatelessWidget {
@@ -43,7 +44,7 @@ class HomePage extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.only(top: 10,left: 10),
                   alignment: Alignment.topLeft,
-                  height: height(context)*0.15,
+                  height: height(context)*0.16,
                   width: height(context)*0.2,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
@@ -51,12 +52,15 @@ class HomePage extends StatelessWidget {
                      begin: Alignment.topLeft,
                      end: Alignment.bottomRight,
                      colors: [
-                       Color(0xFFFFC85C),
-                       Color(0xFFF1B301),
+                       AppColors.cFFC85C,
+                       AppColors.cF1B301,
+
                      ]
                    )
                   ),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         width: height(context)*0.14,
@@ -67,8 +71,15 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20)
 
                         ),
-                        child: Text("🔥 Yangi",style: TextStyle(color: Colors.white,fontSize: 14),),
-                      )
+                        child: const Text("🔥 Yangi",style: TextStyle(color: Colors.white,fontSize: 14),),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children:  [
+                          const Text("PIT\n - SA",style: TextStyle(color: AppColors.cE76A06,fontSize: 26,fontWeight: FontWeight.w700)),
+                          Image.asset(AppImages.pizza,width: height(context)*0.1,)
+                        ],
+                      ),
                     ],
                   ),
                 ),
