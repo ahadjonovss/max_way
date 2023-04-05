@@ -1,4 +1,4 @@
 const String splash = '/splash';
-const String allMusics = '/allMusics';
+const String home = '/home';
 const String musicPlayer = '/musicPlayer';
 

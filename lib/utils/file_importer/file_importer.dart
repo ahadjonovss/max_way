@@ -10,6 +10,7 @@ export 'package:max_way/utils/router/routes.dart';
 export 'package:max_way/app/app.dart';
 export 'package:max_way/app/bloc_observer.dart';
 export 'package:max_way/ui/splash/splash_page.dart';
+export 'package:max_way/ui/home/home_page.dart';
 
 
 

@@ -8,8 +8,8 @@ class MyRouter {
     switch (settings.name) {
       case  splash:
         return navigateTo(const SplashPage());
-      // case  allMusics:
-      //   return navigateTo( AllMusicsPage());
+      case  home:
+        return navigateTo( HomePage());
       // case  musicPlayer:
       //   return navigateTo( MusicPlayerPage(data: argumentList as List,));
       // case  payment:

@@ -11,7 +11,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
       Future.delayed( const Duration(seconds: 3)).then((value) =>mounted?
-          Navigator.pushNamedAndRemoveUntil(context, allMusics, (route) => false):null);
+          Navigator.pushNamedAndRemoveUntil(context, home, (route) => false):null);
 
 
     // FirebaseMessaging.instance.getToken().then((value) async {
