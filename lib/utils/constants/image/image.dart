@@ -1,10 +1,10 @@
 class AppImages {
-  static const mainPath = 'assets/image';
-  static const menuPath = '$mainPath/menu';
+  static const mainPath = 'assets/image/';
+  static const menuPath = '$mainPath/menu/';
 
 
   //images of home page
-  static const burger = '${mainPath}buger.png';
+  static const burger = '${mainPath}burger.png';
   static const combo = '${mainPath}combo.png';
   static const logo = '${mainPath}logo.png';
   static const pizza = '${mainPath}pizza.png';

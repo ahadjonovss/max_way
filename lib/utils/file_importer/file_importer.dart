@@ -13,6 +13,7 @@ export 'package:max_way/ui/splash/splash_page.dart';
 export 'package:max_way/ui/home/home_page.dart';
 export 'dart:math';
 export 'package:sqflite/sqflite.dart';
-
-
+export 'package:max_way/utils/constants/image/image.dart';
+export 'package:max_way/utils/size/mediaquary.dart';
+export 'package:google_fonts/google_fonts.dart';
 
