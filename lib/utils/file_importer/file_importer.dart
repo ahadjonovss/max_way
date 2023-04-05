@@ -16,4 +16,7 @@ export 'package:sqflite/sqflite.dart';
 export 'package:max_way/utils/constants/image/image.dart';
 export 'package:max_way/utils/size/mediaquary.dart';
 export 'package:google_fonts/google_fonts.dart';
-
+export 'package:max_way/ui/home/widgets/category_item.dart';
+export 'package:max_way/utils/constants/color/color.dart';
+export 'package:zoom_tap_animation/zoom_tap_animation.dart';
+export 'package:max_way/ui/home/widgets/tab_item.dart';

@@ -1,5 +1,6 @@
-import 'package:max_way/ui/home/widgets/category_item.dart';
-import 'package:max_way/utils/constants/color/color.dart';
+
+import 'package:max_way/ui/home/widgets/tab_controller.dart';
+import 'package:max_way/ui/home/widgets/tab_item.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,6 +14,7 @@ class HomePage extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.all(20),
         child: ListView(
+          physics:const BouncingScrollPhysics(),
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,7 +56,10 @@ class HomePage extends StatelessWidget {
                   textColor: AppColors.cFC96F7,
                 ),
               ],
-            )
+            ),
+            SizedBox(height: height(context) * 0.05),
+            TabBarViewController()
+
           ],
         ),
       ),
