@@ -11,16 +11,24 @@ class FoodModel {
       required this.isSpicy});
 
   factory FoodModel.fromJson(Map<String, dynamic> json) => FoodModel(
-      name: json["name"] ?? "No name",
-      description: json["description"] ?? "No data",
-      price: json["price"] ?? 0,
-      isSpicy: json["isSpicy"] ?? false);
+      name: json[FoodModelFields.name] ?? "No name",
+      description: json[FoodModelFields.description] ?? "No data",
+      price: json[FoodModelFields.price] ?? 0,
+      isSpicy: json[FoodModelFields.price] ?? false);
 
 
   toJson()=>{
-    "name":name,
-    "description":description,
-    "price":price,
-    "isSpicy":isSpicy
+    FoodModelFields.name:name,
+    FoodModelFields.description:description,
+    FoodModelFields.price:price,
+    FoodModelFields.isSpicy:isSpicy
   };
+
+}
+
+class FoodModelFields{
+  static const name = 'name';
+  static const description = 'description';
+  static const price = 'price';
+  static const isSpicy = 'isSpicy';
 }
