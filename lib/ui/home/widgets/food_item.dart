@@ -6,6 +6,7 @@ class FoodItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
+      margin: EdgeInsets.only(top: 20),
       height: height(context)*0.21,
       width: width(context),
       padding: EdgeInsets.all(height(context)*0.02),

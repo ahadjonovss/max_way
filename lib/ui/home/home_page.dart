@@ -14,6 +14,8 @@ class HomePage extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.all(20),
         child: ListView(
+          shrinkWrap: true,
+          primary: true,
           physics:const BouncingScrollPhysics(),
           children: [
             Row(

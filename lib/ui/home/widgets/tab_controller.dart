@@ -1,3 +1,4 @@
+import 'package:max_way/ui/home/widgets/food_item.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
 class TabBarViewController extends StatefulWidget {
@@ -33,8 +34,24 @@ class _TabBarViewControllerState extends State<TabBarViewController> {
               TabItem(title: "Barchasi", index: 3, activeIndex: activeIndex),
             ]),
         SizedBox(
-          height: 400,
+          height: 2400,
+          width: width(context),
           child: TabBarView(children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Pitsa",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.getFont("Inter",
+                        color: AppColors.c222124,
+                        fontWeight: FontWeight.w700, fontSize: 36)),
+                Column(
+                  children: [
+                    ...List.generate(10, (index) => FoodItem())
+                  ],
+                )
+              ],
+            ),
 
             Container(),
             Container(),
