@@ -1,10 +1,22 @@
-import 'package:max_way/data/model/food_model.dart';
-import 'package:max_way/service/local_db_servcie.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
 class ShoppingBasketRepository{
 
-  void addFood(FoodModel food) async=> await getIt<LocalDatabase>().addFood(food);
+  Future<String> addFood(FoodModel food) async{
+    FoodCategoryModel foods = await getSavedFoods();
+    bool isThereIs = false;
+    for (var element in foods.foods) {
+      if(element.name==food.name){
+        isThereIs=true;
+        break;
+      }
+    }
+    if(!isThereIs){
+      await getIt<LocalDatabase>().addFood(food);
+      return "${food.name} savatchaga qo'shildi!";
+    }
+    return "${food.name} savatchada allaqachon mavjud!";
+  }
 
   Future<FoodCategoryModel> getSavedFoods() async{
     List result = await getIt<LocalDatabase>().getFoods();

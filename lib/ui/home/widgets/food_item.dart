@@ -67,9 +67,9 @@ class FoodItem extends StatelessWidget {
                             color: AppColors.c222124,
                             fontWeight: FontWeight.w700, fontSize: 18)),
                     food.isFromDb?const SizedBox():ZoomTapAnimation(
-                      onTap: ()  {
-                         getIt<ShoppingBasketRepository>().addFood(food);
-                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("${food.name} savatchaga qo'shildi!")));
+                      onTap: ()  async {
+
+                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(await getIt<ShoppingBasketRepository>().addFood(food))));
                       },
                       child: Container(
                           alignment: Alignment.center,
