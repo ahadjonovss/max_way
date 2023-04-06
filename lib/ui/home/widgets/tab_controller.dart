@@ -1,5 +1,6 @@
 import 'package:max_way/ui/home/widgets/food_item.dart';
 import 'package:max_way/ui/home/widgets/food_category_item.dart';
+import 'package:max_way/ui/home/widgets/tab_bar_view.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
 class TabBarViewController extends StatefulWidget {
@@ -28,19 +29,20 @@ class _TabBarViewControllerState extends State<TabBarViewController> {
             indicatorColor: Colors.transparent,
 
             tabs: [
-              TabItem(title: foods[0].categoryName, index: 0, activeIndex: activeIndex),
-              TabItem(title: foods[1].categoryName, index: 1, activeIndex: activeIndex),
-              TabItem(title: foods[2].categoryName, index: 2, activeIndex: activeIndex),
-              TabItem(title: foods[3].categoryName, index: 3, activeIndex: activeIndex),
+              TabItem(title: foods[0].name, index: 0, activeIndex: activeIndex),
+              TabItem(title: foods[1].name, index: 1, activeIndex: activeIndex),
+              TabItem(title: foods[2].name, index: 2, activeIndex: activeIndex),
+              TabItem(title: foods[3].name, index: 3, activeIndex: activeIndex),
             ]),
         SizedBox(
           height: 2400,
           width: width(context),
           child:  TabBarView(children: [
-            FoodCategoryItem(foodCategoryModel: foods[0]),
-            FoodCategoryItem(foodCategoryModel: foods[1]),
-            FoodCategoryItem(foodCategoryModel: foods[2]),
-            FoodCategoryItem(foodCategoryModel: foods[3]),
+            TabBarViewItem(category: foods[0],),
+            TabBarViewItem(category: foods[1],),
+            TabBarViewItem(category: foods[2],),
+            TabBarViewItem(category: foods[3],),
+
           ]),
         )
       ],

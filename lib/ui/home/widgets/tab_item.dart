@@ -10,7 +10,7 @@ class TabItem extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isActive = index==activeIndex;
     return Tab(child:  Container(
-      width: isActive?height(context) * 0.1:height(context) * 0.08,
+      width: height(context) * 0.1,
       height: height(context) * 0.06,
       alignment: Alignment.center,
       decoration: isActive?BoxDecoration(

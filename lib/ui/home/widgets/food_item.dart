@@ -28,7 +28,7 @@ class FoodItem extends StatelessWidget {
                     fit: BoxFit.cover
                 )
             ),
-            child: Container(
+            child: food.isSpicy?Container(
               alignment: Alignment.center,
               height: height(context)*0.06,
               width: height(context)*0.06,
@@ -39,7 +39,7 @@ class FoodItem extends StatelessWidget {
               ),
               child: const Text("🔥",style: TextStyle(fontSize: 20),),
 
-            ),
+            ):null,
           ),
           Expanded(
             child: Column(
