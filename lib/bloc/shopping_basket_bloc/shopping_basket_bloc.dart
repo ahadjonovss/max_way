@@ -11,6 +11,7 @@ class ShoppingBasketBloc extends Bloc<ShoppingBasketEvent, ShoppingBasketState> 
 
   getFoods(event, emit) async {
     emit(GettingSavedFoodsInProgress());
+    await Future.delayed(const Duration(seconds: 3));
     try{
       var data = await getIt<ShoppingBasketRepository>().getSavedFoods();
       emit(GettingSavedFoodsInSuccess(foods: data));

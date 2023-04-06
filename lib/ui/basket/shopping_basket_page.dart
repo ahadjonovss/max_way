@@ -28,7 +28,7 @@ class ShoppingBasketPage extends StatelessWidget {
                 if(state is GettingSavedFoodsInSuccess){
                   return FoodCategoryItem(foodCategoryModel: state.foods);
                 }else if(state is GettingSavedFoodsInProgress){
-                  return const CircularProgressIndicator();
+                  return const CategoryShimmer();
                 }else if(state is GettingSavedFoodsInFailury){
                   return SafeArea(child: Text(state.status));
                 }
