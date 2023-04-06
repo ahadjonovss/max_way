@@ -1,5 +1,3 @@
-import 'package:max_way/ui/home/widgets/food_item.dart';
-import 'package:max_way/ui/home/widgets/food_category_item.dart';
 import 'package:max_way/ui/home/widgets/tab_bar_view.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 

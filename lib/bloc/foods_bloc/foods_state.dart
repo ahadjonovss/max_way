@@ -1,6 +1,25 @@
 part of 'foods_bloc.dart';
 
 @immutable
-abstract class FoodsState {}
+ class FoodsState extends Equatable {
+  String message;
+  List<CategoryFoods> foods;
+  FormStatus status;
 
-class FoodsInitial extends FoodsState {}
+  FoodsState({required this.foods,required this.status,required this.message});
+  copyWith({
+    String? message,
+    List<CategoryFoods>? foods,
+    FormStatus? status
+})=>FoodsState(foods: foods??this.foods, status: status??this.status, message: message??this.message);
+
+  @override
+  List<Object?> get props => [
+    message,
+    status,
+    foods
+  ];
+}
+
+
+
