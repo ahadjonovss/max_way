@@ -10,6 +10,7 @@ class AppImages {
   static const pizza = '${mainPath}pizza.png';
   static const basket = '${mainPath}basket.png';
   static const blur = '${mainPath}blur.svg';
+  static const empty = '${mainPath}empty_cart.json';
 
   //images of menu
   static const cheeseBurger = '${menuPath}cheeseburger.png';

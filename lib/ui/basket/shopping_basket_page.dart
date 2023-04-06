@@ -26,7 +26,7 @@ class ShoppingBasketPage extends StatelessWidget {
               create: (context) => ShoppingBasketBloc(),
               child: BlocBuilder<ShoppingBasketBloc,ShoppingBasketState>(builder: (context, state) {
                 if(state is GettingSavedFoodsInSuccess){
-                  return FoodCategoryItem(foodCategoryModel: state.foods);
+                  return state.foods.foods.isNotEmpty?FoodCategoryItem(foodCategoryModel: state.foods):Lottie.asset(AppImages.empty);
                 }else if(state is GettingSavedFoodsInProgress){
                   return const CategoryShimmer();
                 }else if(state is GettingSavedFoodsInFailury){
