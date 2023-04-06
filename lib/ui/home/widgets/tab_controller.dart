@@ -5,7 +5,6 @@ import 'package:max_way/utils/file_importer/file_importer.dart';
 class TabBarViewController extends StatelessWidget {
    TabBarViewController({Key? key}) : super(key: key);
 
-  int activeIndex = 0;
 
   @override
   Widget build(BuildContext context) {

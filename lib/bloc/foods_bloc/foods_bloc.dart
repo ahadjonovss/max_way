@@ -10,7 +10,7 @@ class FoodsBloc extends Bloc<GetFoodsEvent, FoodsState> {
   }
 
   void getFoods(GetFoodsEvent event, emit) async {
-   emit(state.copyWith(status: FormStatus.gettingFoodsInProgress));
+   emit(state.copyWith(status: FormStatus.gettingFoodsInProgress,activeIndex: event.index));
    await Future.delayed(const Duration(seconds: 5));
    emit(state.copyWith(foods: foods[event.index],status: FormStatus.gettingFoodsInSuccess,activeIndex: event.index));
   }
