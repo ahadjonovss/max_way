@@ -21,3 +21,4 @@ export 'package:max_way/utils/constants/color/color.dart';
 export 'package:zoom_tap_animation/zoom_tap_animation.dart';
 export 'package:max_way/ui/home/widgets/tab_item.dart';
 export 'package:max_way/ui/home/widgets/food_item.dart';
+export 'package:max_way/data/model/food_category_model.dart';

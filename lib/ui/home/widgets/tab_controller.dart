@@ -36,7 +36,7 @@ class _TabBarViewControllerState extends State<TabBarViewController> {
         SizedBox(
           height: 2400,
           width: width(context),
-          child: const TabBarView(children: [
+          child:  TabBarView(children: [
             FoodCategoryItem(),
             FoodCategoryItem(),
             FoodCategoryItem(),

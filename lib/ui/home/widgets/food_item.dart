@@ -1,12 +1,14 @@
+import 'package:max_way/data/model/food_model.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
 class FoodItem extends StatelessWidget {
-  const FoodItem({Key? key}) : super(key: key);
+  FoodModel food;
+  FoodItem({required this.food,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return  Container(
-      margin: EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.only(top: 20),
       height: height(context)*0.21,
       width: width(context),
       padding: EdgeInsets.all(height(context)*0.02),
@@ -20,9 +22,9 @@ class FoodItem extends StatelessWidget {
             height: height(context)*0.17,
             width: height(context)*0.17,
             alignment: Alignment.topLeft,
-            decoration: const BoxDecoration(
+            decoration:  BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(AppImages.gavaya),
+                    image: AssetImage("assets/image.menu/${food.image}.png"),
                     fit: BoxFit.cover
                 )
             ),
@@ -44,13 +46,13 @@ class FoodItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Mexica 🌶️",
+                Text(food.name,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.getFont("Inter",
                         color: AppColors.c222124,
                         fontWeight: FontWeight.w700, fontSize: 18)),
                 SizedBox(height: height(context) * 0.005),
-                Text("Горячая закуска с митболами из говядины, томатами,моцареллой и соусом чипотле",
+                Text(food.description,
                     textAlign: TextAlign.start,
                     maxLines: 3,
                     style: GoogleFonts.getFont("Inter",
@@ -60,7 +62,7 @@ class FoodItem extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("64,000 UZS",
+                    Text("${food.price} UZS",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.getFont("Inter",
                             color: AppColors.c222124,
