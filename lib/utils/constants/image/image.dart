@@ -11,6 +11,7 @@ class AppImages {
   static const basket = '${mainPath}basket.png';
   static const blur = '${mainPath}blur.svg';
   static const empty = '${mainPath}empty_cart.json';
+  static const filter = '${mainPath}filter.svg';
 
   //images of menu
   static const cheeseBurger = '${menuPath}cheeseburger.png';

@@ -21,6 +21,7 @@ class _SplashPageState extends State<SplashPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children:  [
              Image.asset(AppImages.logo,width: 200,),
+            Text("by Samandar Ahadjonov")
 
           ],
         ),

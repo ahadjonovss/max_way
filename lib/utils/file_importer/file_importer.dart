@@ -35,3 +35,4 @@ export '../../utils/form_status/form_status.dart';
 export 'package:max_way/bloc/foods_bloc/foods_bloc.dart';
 export 'package:max_way/ui/home/widgets/category_shimmer.dart';
 export 'package:max_way/ui/home/widgets/tab_bar_view.dart';
+export 'package:flutter_svg/flutter_svg.dart';
