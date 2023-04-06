@@ -22,3 +22,7 @@ export 'package:zoom_tap_animation/zoom_tap_animation.dart';
 export 'package:max_way/ui/home/widgets/tab_item.dart';
 export 'package:max_way/ui/home/widgets/food_item.dart';
 export 'package:max_way/data/model/food_category_model.dart';
+export 'package:max_way/utils/get_it/get_it.dart';
+export 'package:get_it/get_it.dart';
+export 'package:max_way/data/repositories/shopping_basket_repository.dart';
+export 'package:max_way/service/local_db_servcie.dart';

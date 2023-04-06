@@ -40,13 +40,13 @@ class LocalDatabase {
         ")");
   }
 
-  Future addMind(FoodModel food) async {
+  Future addFood(FoodModel food) async {
     Database db = await getDb();
     var id = await db.insert(tableName, food.toJson());
     debugPrint("Mind $id bilan databsega saqlandi");
   }
 
-  Future<List> getMinds() async {
+  Future<List> getFoods() async {
     Database db = await getDb();
 
     var result = await db.query(tableName, columns: [
