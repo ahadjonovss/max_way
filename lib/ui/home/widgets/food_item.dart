@@ -66,9 +66,10 @@ class FoodItem extends StatelessWidget {
                         style: GoogleFonts.getFont("Inter",
                             color: AppColors.c222124,
                             fontWeight: FontWeight.w700, fontSize: 18)),
-                    ZoomTapAnimation(
-                      onTap: () {
-                        LocalDatabase().getFoods();
+                    food.isFromDb?const SizedBox():ZoomTapAnimation(
+                      onTap: ()  {
+                         getIt<ShoppingBasketRepository>().addFood(food);
+                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("${food.name} savatchaga qo'shildi!")));
                       },
                       child: Container(
                           alignment: Alignment.center,

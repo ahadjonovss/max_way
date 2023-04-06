@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:max_way/ui/basket/shopping_basket_page.dart';
 
 import '../file_importer/file_importer.dart';
 
@@ -9,7 +10,9 @@ class MyRouter {
       case  splash:
         return navigateTo(const SplashPage());
       case  home:
-        return navigateTo( HomePage());
+        return navigateTo( const HomePage());
+      case  shoppingBasket:
+        return navigateTo(  ShoppingBasketPage());
       // case  musicPlayer:
       //   return navigateTo( MusicPlayerPage(data: argumentList as List,));
       // case  payment:

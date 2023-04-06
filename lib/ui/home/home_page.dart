@@ -1,6 +1,4 @@
-
 import 'package:max_way/ui/home/widgets/tab_controller.dart';
-import 'package:max_way/ui/home/widgets/tab_item.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
 class HomePage extends StatelessWidget {
@@ -32,7 +30,11 @@ class HomePage extends StatelessWidget {
                 const Text("Bolalar uchun"),
                 const Text("Filiallar"),
                 const Icon(Icons.shopping_basket),
-                const Icon(Icons.menu),
+                ZoomTapAnimation(
+                  onTap: () {
+                    Navigator.pushNamed(context, shoppingBasket);
+                  },
+                  child: const Icon(Icons.menu),),
               ],
             ),
             SizedBox(height: height(context) * 0.02),

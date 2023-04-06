@@ -1,15 +1,44 @@
-import 'package:flutter/material.dart';
-import 'package:max_way/data/model/food_category_model.dart';
-import 'package:max_way/ui/home/widgets/food_category_item.dart';
+import 'package:max_way/utils/file_importer/file_importer.dart';
 
 class ShoppingBasketPage extends StatelessWidget {
-  FoodCategoryModel foodCategoryModel;
-  ShoppingBasketPage({required this.foodCategoryModel,Key? key}) : super(key: key);
+  ShoppingBasketPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FoodCategoryItem(foodCategoryModel: foodCategoryModel),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios,color: Colors.black,),
+          onPressed: () {
+          Navigator.pop(context);
+        },),
+        title: Image.asset(AppImages.logo,width: 40,),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Container(
+            padding:const  EdgeInsets.all(20),
+            width: width(context),
+            child: BlocProvider(
+              create: (context) => ShoppingBasketBloc(),
+              child: BlocBuilder<ShoppingBasketBloc,ShoppingBasketState>(builder: (context, state) {
+                if(state is GettingSavedFoodsInSuccess){
+                  return FoodCategoryItem(foodCategoryModel: state.foods);
+                }else if(state is GettingSavedFoodsInProgress){
+                  return const CircularProgressIndicator();
+                }else if(state is GettingSavedFoodsInFailury){
+                  return SafeArea(child: Text(state.status));
+                }
+                return Container();
+              },),
+
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

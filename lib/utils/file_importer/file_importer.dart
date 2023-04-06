@@ -27,3 +27,5 @@ export 'package:get_it/get_it.dart';
 export 'package:max_way/data/repositories/shopping_basket_repository.dart';
 export 'package:max_way/service/local_db_servcie.dart';
 export 'package:max_way/data/model/food_model.dart';
+export 'package:max_way/bloc/shopping_basket_bloc/shopping_basket_bloc.dart';
+export 'package:max_way/ui/home/widgets/food_category_item.dart';

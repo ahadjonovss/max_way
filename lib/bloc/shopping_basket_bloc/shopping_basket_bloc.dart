@@ -1,16 +1,21 @@
-import 'dart:async';
-
-import 'package:bloc/bloc.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
-import 'package:meta/meta.dart';
 
 part 'shopping_basket_event.dart';
 part 'shopping_basket_state.dart';
 
 class ShoppingBasketBloc extends Bloc<ShoppingBasketEvent, ShoppingBasketState> {
   ShoppingBasketBloc() : super(ShoppingBasketInitial()) {
-    on<ShoppingBasketEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<GetSavedFoodsEvent>(getFoods);
+    add(GetSavedFoodsEvent());
+  }
+
+  getFoods(event, emit) async {
+    emit(GettingSavedFoodsInProgress());
+    try{
+      var data = await getIt<ShoppingBasketRepository>().getSavedFoods();
+      emit(GettingSavedFoodsInSuccess(foods: data));
+    }catch(e){
+      emit(GettingSavedFoodsInFailury(status: e.toString()));
+    }
   }
 }
