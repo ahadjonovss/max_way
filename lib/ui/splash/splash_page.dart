@@ -13,22 +13,15 @@ class _SplashPageState extends State<SplashPage> {
       Future.delayed( const Duration(seconds: 3)).then((value) =>mounted?
           Navigator.pushNamedAndRemoveUntil(context, home, (route) => false):null);
 
-
-    // FirebaseMessaging.instance.getToken().then((value) async {
-    //   var shared = await SharedPreferences.getInstance();
-    //   await shared.setString("token", value!);
-    //   debugPrint("Token: $value");
-    // });
     return  Scaffold(
-      backgroundColor: Colors.black,
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            // Image.asset(AppImages.logo,width: 200,),
-            Text("Konsta App",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 18),)
+          children:  [
+             Image.asset(AppImages.logo,width: 200,),
+
           ],
         ),
       ),
