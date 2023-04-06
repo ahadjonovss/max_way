@@ -32,3 +32,6 @@ export 'package:max_way/ui/home/widgets/food_category_item.dart';
 export 'package:equatable/equatable.dart';
 export 'package:max_way/data/model/food_category_model.dart';
 export '../../utils/form_status/form_status.dart';
+export 'package:max_way/bloc/foods_bloc/foods_bloc.dart';
+export 'package:max_way/ui/home/widgets/category_shimmer.dart';
+export 'package:max_way/ui/home/widgets/tab_bar_view.dart';
