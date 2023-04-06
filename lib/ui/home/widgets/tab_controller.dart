@@ -34,17 +34,7 @@ class _TabBarViewControllerState extends State<TabBarViewController> {
               TabItem(title: foods[2].name, index: 2, activeIndex: activeIndex),
               TabItem(title: foods[3].name, index: 3, activeIndex: activeIndex),
             ]),
-        SizedBox(
-          height: 2400,
-          width: width(context),
-          child:  TabBarView(children: [
-            TabBarViewItem(category: foods[0],),
-            TabBarViewItem(category: foods[1],),
-            TabBarViewItem(category: foods[2],),
-            TabBarViewItem(category: foods[3],),
-
-          ]),
-        )
+      Builder(builder: (context) => TabBarViewItem(category: foods[activeIndex],),)
       ],
     ));
   }
