@@ -1,8 +1,9 @@
+import 'package:max_way/data/model/food_model.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
-class LocalDatabase{
+class LocalDatabase {
   Database? database;
-  String tableName="minds";
+  String tableName = "foods";
 
   LocalDatabase();
 
@@ -18,9 +19,8 @@ class LocalDatabase{
     print("Database ochish uchun harakat boshlandi");
 
     String databasesPath = await getDatabasesPath();
-    String dbPath = '${databasesPath}minds.db';
+    String dbPath = '${databasesPath}foods.db';
     print("Databasening manzili $dbPath");
-
 
     var database = await openDatabase(dbPath, version: 1, onCreate: populateDb);
     print("Database ochildi");
@@ -32,35 +32,37 @@ class LocalDatabase{
 
   void populateDb(Database database, int version) async {
     await database.execute("CREATE TABLE $tableName ("
-        "mind TEXT,"
-        "author TEXT"
+        "${FoodModelFields.name} TEXT,"
+        "${FoodModelFields.image} TEXT,"
+        "${FoodModelFields.price} INTEGER,"
+        "${FoodModelFields.isSpicy} BOOLEAN,"
+        "${FoodModelFields.description} TEXT"
         ")");
   }
 
-
-  // Future addMind(MindModel mind) async {
-  //   Database db = await getDb();
-  //   var id = await db.insert(tableName, mind.toJson());
-  //   print("Mind $id bilan databsega saqlandi");
-  // }
+  Future addMind(FoodModel food) async {
+    Database db = await getDb();
+    var id = await db.insert(tableName, food.toJson());
+    debugPrint("Mind $id bilan databsega saqlandi");
+  }
 
   Future<List> getMinds() async {
     Database db = await getDb();
 
-    var result = await db.query(tableName, columns: ["author", "mind"]);
+    var result = await db.query(tableName, columns: [
+      FoodModelFields.description,
+      FoodModelFields.name,
+      FoodModelFields.isSpicy,
+      FoodModelFields.image,
+      FoodModelFields.price
+    ]);
     return result.toList();
   }
 
-  // Future updateMind(MindModel mindModel,String mind) async {
-  //   Database db = await getDb();
-  //   var id=  await db.update(tableName, mindModel.toJson(), where: "mind = ?", whereArgs: [mind]);
-  //  print("Update bo'ldi");
-  // }
 
-  Future deleteMind(String mind) async {
+  Future deleteFood(String foodName) async {
     Database db = await getDb();
-    await db.delete(tableName, where: 'mind = ?', whereArgs: [mind]);
+    await db.delete(tableName, where: '${FoodModelFields.name} = ?', whereArgs: [foodName]);
     print("Deteted");
   }
-
 }
