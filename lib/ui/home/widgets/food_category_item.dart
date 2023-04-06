@@ -10,6 +10,7 @@ class FoodCategoryItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(height: 12,),
         Text(foodCategoryModel.categoryName,
             textAlign: TextAlign.center,
             style: GoogleFonts.getFont("Inter",
