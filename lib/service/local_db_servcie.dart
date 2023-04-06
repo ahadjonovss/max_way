@@ -35,7 +35,7 @@ class LocalDatabase {
         "${FoodModelFields.name} TEXT,"
         "${FoodModelFields.image} TEXT,"
         "${FoodModelFields.price} INTEGER,"
-        "${FoodModelFields.isSpicy} BOOLEAN,"
+        "${FoodModelFields.isSpicy} BLOB,"
         "${FoodModelFields.description} TEXT"
         ")");
   }
@@ -56,6 +56,7 @@ class LocalDatabase {
       FoodModelFields.image,
       FoodModelFields.price
     ]);
+    print(result);
     return result.toList();
   }
 

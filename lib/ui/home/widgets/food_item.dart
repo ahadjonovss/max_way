@@ -1,4 +1,5 @@
 import 'package:max_way/data/model/food_model.dart';
+import 'package:max_way/service/local_db_servcie.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
 class FoodItem extends StatelessWidget {
@@ -67,17 +68,22 @@ class FoodItem extends StatelessWidget {
                         style: GoogleFonts.getFont("Inter",
                             color: AppColors.c222124,
                             fontWeight: FontWeight.w700, fontSize: 18)),
-                    Container(
-                        alignment: Alignment.center,
-                        height: height(context)*0.06,
-                        width: height(context)*0.06,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: AppColors.cF1B301,
+                    ZoomTapAnimation(
+                      onTap: () {
+                        LocalDatabase().getMinds();
+                      },
+                      child: Container(
+                          alignment: Alignment.center,
+                          height: height(context)*0.06,
+                          width: height(context)*0.06,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: AppColors.cF1B301,
 
-                        ),
-                        child: const Icon(Icons.add,color: Colors.white,)
+                          ),
+                          child: const Icon(Icons.add,color: Colors.white,)
 
+                      ),
                     )
                   ],
                 )
