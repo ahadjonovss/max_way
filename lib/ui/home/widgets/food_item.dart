@@ -1,5 +1,3 @@
-import 'package:max_way/data/model/food_model.dart';
-import 'package:max_way/service/local_db_servcie.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
 class FoodItem extends StatelessWidget {
@@ -70,7 +68,7 @@ class FoodItem extends StatelessWidget {
                             fontWeight: FontWeight.w700, fontSize: 18)),
                     ZoomTapAnimation(
                       onTap: () {
-                        LocalDatabase().getMinds();
+                        LocalDatabase().getFoods();
                       },
                       child: Container(
                           alignment: Alignment.center,

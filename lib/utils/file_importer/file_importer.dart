@@ -26,3 +26,4 @@ export 'package:max_way/utils/get_it/get_it.dart';
 export 'package:get_it/get_it.dart';
 export 'package:max_way/data/repositories/shopping_basket_repository.dart';
 export 'package:max_way/service/local_db_servcie.dart';
+export 'package:max_way/data/model/food_model.dart';
