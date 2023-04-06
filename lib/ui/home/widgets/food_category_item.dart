@@ -1,5 +1,4 @@
 // ignore_for_file: must_be_immutable
-
 import '../../../utils/file_importer/file_importer.dart';
 
 class FoodCategoryItem extends StatelessWidget {

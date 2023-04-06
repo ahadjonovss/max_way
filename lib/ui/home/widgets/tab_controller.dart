@@ -28,19 +28,19 @@ class _TabBarViewControllerState extends State<TabBarViewController> {
             indicatorColor: Colors.transparent,
 
             tabs: [
-              TabItem(title: "Pitsa", index: 0, activeIndex: activeIndex),
-              TabItem(title: "Burger", index: 1, activeIndex: activeIndex),
-              TabItem(title: "Kombo", index: 2, activeIndex: activeIndex),
-              TabItem(title: "Barchasi", index: 3, activeIndex: activeIndex),
+              TabItem(title: foods[0].categoryName, index: 0, activeIndex: activeIndex),
+              TabItem(title: foods[1].categoryName, index: 1, activeIndex: activeIndex),
+              TabItem(title: foods[2].categoryName, index: 2, activeIndex: activeIndex),
+              TabItem(title: foods[3].categoryName, index: 3, activeIndex: activeIndex),
             ]),
         SizedBox(
           height: 2400,
           width: width(context),
           child:  TabBarView(children: [
-            FoodCategoryItem(),
-            FoodCategoryItem(),
-            FoodCategoryItem(),
-            FoodCategoryItem(),
+            FoodCategoryItem(foodCategoryModel: foods[0]),
+            FoodCategoryItem(foodCategoryModel: foods[1]),
+            FoodCategoryItem(foodCategoryModel: foods[2]),
+            FoodCategoryItem(foodCategoryModel: foods[3]),
           ]),
         )
       ],

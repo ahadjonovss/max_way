@@ -24,7 +24,7 @@ class FoodItem extends StatelessWidget {
             alignment: Alignment.topLeft,
             decoration:  BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/image.menu/${food.image}.png"),
+                    image: AssetImage("assets/image/menu/${food.image}.png"),
                     fit: BoxFit.cover
                 )
             ),
