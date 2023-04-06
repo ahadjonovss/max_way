@@ -1,4 +1,5 @@
 import 'package:max_way/ui/home/widgets/food_item.dart';
+import 'package:max_way/ui/home/widgets/food_category_item.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
 class TabBarViewController extends StatefulWidget {
@@ -13,8 +14,7 @@ class _TabBarViewControllerState extends State<TabBarViewController> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(length: 4, child: ListView(
-      shrinkWrap: true,
+    return DefaultTabController(length: 4, child: Column(
       children: [
         TabBar(
           onTap: (value) {
@@ -22,7 +22,7 @@ class _TabBarViewControllerState extends State<TabBarViewController> {
               activeIndex=value;
             });
           },
-            isScrollable: true,
+             isScrollable: true,
             labelColor: Colors.black,
             unselectedLabelColor: Colors.grey,
             indicatorColor: Colors.transparent,
@@ -36,26 +36,11 @@ class _TabBarViewControllerState extends State<TabBarViewController> {
         SizedBox(
           height: 2400,
           width: width(context),
-          child: TabBarView(children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Pitsa",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.getFont("Inter",
-                        color: AppColors.c222124,
-                        fontWeight: FontWeight.w700, fontSize: 36)),
-                Column(
-                  children: [
-                    ...List.generate(10, (index) => FoodItem())
-                  ],
-                )
-              ],
-            ),
-
-            Container(),
-            Container(),
-            Container(),
+          child: const TabBarView(children: [
+            FoodCategoryItem(),
+            FoodCategoryItem(),
+            FoodCategoryItem(),
+            FoodCategoryItem(),
           ]),
         )
       ],
