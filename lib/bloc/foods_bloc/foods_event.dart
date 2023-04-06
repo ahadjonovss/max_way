@@ -1,4 +1,7 @@
 part of 'foods_bloc.dart';
 
 @immutable
-abstract class FoodsEvent {}
+ class GetFoodsEvent {
+ int index;
+ GetFoodsEvent({required this.index});
+}

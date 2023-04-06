@@ -1,7 +1,4 @@
 // ignore: depend_on_referenced_packages
-
-
-
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
 class AppBlocObserver extends BlocObserver {

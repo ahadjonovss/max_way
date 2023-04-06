@@ -1,3 +1,4 @@
+import 'package:max_way/bloc/foods_bloc/foods_bloc.dart';
 import 'package:max_way/utils/file_importer/file_importer.dart';
 
 
@@ -6,7 +7,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MyApp();
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => FoodsBloc(),)
+      ],
+        child: MyApp());
   }
 }
 
