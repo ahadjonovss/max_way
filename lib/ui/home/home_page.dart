@@ -29,12 +29,12 @@ class HomePage extends StatelessWidget {
                 ),
                 const Text("Bolalar uchun"),
                 const Text("Filiallar"),
-                const Icon(Icons.shopping_basket),
                 ZoomTapAnimation(
                   onTap: () {
                     Navigator.pushNamed(context, shoppingBasket);
                   },
-                  child: const Icon(Icons.menu),),
+                  child:  Image.asset(AppImages.basket,width: 24,),),
+                const Icon(Icons.menu),
               ],
             ),
             SizedBox(height: height(context) * 0.02),

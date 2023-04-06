@@ -8,6 +8,7 @@ class AppImages {
   static const combo = '${mainPath}combo.png';
   static const logo = '${mainPath}logo.png';
   static const pizza = '${mainPath}pizza.png';
+  static const basket = '${mainPath}basket.png';
   static const blur = '${mainPath}blur.svg';
 
   //images of menu
