@@ -35,7 +35,43 @@ class TabBarViewController extends StatelessWidget {
         }else if(state.status==FormStatus.gettingFoodsInFailury){
           return Text(state.message);
         }else{
-          return const CircularProgressIndicator();
+          return  SizedBox(
+            width: width(context),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 12,),
+                Shimmer.fromColors(
+                  baseColor: Colors.grey.withOpacity(0.4),
+                  highlightColor: Colors.white,
+
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8)
+                    ),
+                    height: 30,
+                    width: 230,
+                  ),
+                ),
+                Shimmer.fromColors(
+                  baseColor: Colors.grey.withOpacity(0.4),
+                  highlightColor: Colors.white,
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 20),
+                    height: height(context)*0.21,
+                    width: width(context),
+                    padding: EdgeInsets.all(height(context)*0.02),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.grey.withOpacity(0.2))
+                    ),
+                  ),
+                )
+              ],
+            ),
+          );
         }
 
       },)
